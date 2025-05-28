@@ -20,6 +20,13 @@ return {
     injector = { ---@type table<lc.lang, lc.inject>
       ["python3"] = {
         before = true,
+        after = [[
+if __name__ == '__main__':
+    def main():
+        sol = Solution()
+
+    main()
+]],
       },
       ["cpp"] = {
         before = { "#include <bits/stdc++.h>", "using namespace std;" },
